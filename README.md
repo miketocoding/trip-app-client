@@ -11,10 +11,10 @@ Travel app for past trips. I’ve always loved going on trips and reminiscing ab
 
 ## Images
 ### Entity Relationship Diagram
-![Trip App ERD]()
-
 ### Wireframe
-![Trip App Wireframe]()
+![Trip App Wireframe](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-wireframe.png)
+
+![Trip App ERD](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-erd.png)
 
 ## Creator
 Michael Van Le
