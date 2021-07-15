@@ -10,10 +10,10 @@ Travel app for past trips. I’ve always loved going on trips and reminiscing ab
 - As a user, I want to see trip posts i’ve been tagged in
 
 ## Images
-### Entity Relationship Diagram
 ### Wireframe
 ![Trip App Wireframe](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-wireframe.png)
 
+### Entity Relationship Diagram
 ![Trip App ERD](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-erd.png)
 
 ## Creator
