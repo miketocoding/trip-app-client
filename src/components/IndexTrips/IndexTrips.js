@@ -12,8 +12,8 @@ const IndexTrips = (props) => {
   }, [])
 
   const tripLinks = trips.map(trip => (
-    <li key={trip._id}>
-      <Link to={`/books/${trip._id}`}>{trip.location}</Link>
+    <li key={trip.id}>
+      <Link to={`/index-trips/${trip.id}`}>{trip.location}, id: {trip.id}</Link>
     </li>
   ))
 

@@ -44,7 +44,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
     />
 
     <label>Standouts</label>
-    <input
+    <textarea
       placeholder="Standouts"
       value={trip.standouts}
       name="standouts"

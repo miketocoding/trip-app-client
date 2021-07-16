@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
@@ -16,6 +16,8 @@ import Home from './components/Home/Home'
 import CreatePost from './components/CreatePost/CreatePost'
 // import IndexTrips component
 import IndexTrips from './components/IndexTrips/IndexTrips'
+import ShowTrip from './components/ShowTrip/ShowTrip'
+import EditPost from './components/EditPost/EditPost'
 
 class App extends Component {
   constructor (props) {
@@ -83,6 +85,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/index-trips' render={() => (
             <IndexTrips msgAlert={this.msgAlert} user={user} />
           )} />
+          {/* Add show trip route. Route authenticated. */}
+          <AuthenticatedRoute user={user} exact path='/index-trips/:id' render={() => (
+            <ShowTrip msgAlert={this.msgAlert} user={user} />
+          )} />
+          {/* Add edit post route. Route authenticated. */}
+          <AuthenticatedRoute user={user} exact path='/index-trips/:id/edit' render={() => (
+            <EditPost msgAlert={this.msgAlert} user={user} />
+          )} />
 
         </main>
       </Fragment>
@@ -90,4 +100,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)
