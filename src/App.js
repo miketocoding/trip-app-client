@@ -10,6 +10,9 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
+// import Home component for home page
+import Home from './components/Home/Home'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -65,6 +68,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+
+          {/* Add home page route. Route not authenticated. */}
+          <Route exact path='/' component={Home} />
         </main>
       </Fragment>
     )
