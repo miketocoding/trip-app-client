@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 const Home = () => {
   return (
     <Fragment>
-      <h1>You are at the Home Page</h1>
+      <h1>You are on the Home Page</h1>
     </Fragment>
   )
 }

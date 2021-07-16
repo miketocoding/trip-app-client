@@ -12,6 +12,10 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 
 // import Home component for home page
 import Home from './components/Home/Home'
+// import createPost component
+import CreatePost from './components/CreatePost/CreatePost'
+// import IndexTrips component
+import IndexTrips from './components/IndexTrips/IndexTrips'
 
 class App extends Component {
   constructor (props) {
@@ -71,6 +75,15 @@ class App extends Component {
 
           {/* Add home page route. Route not authenticated. */}
           <Route exact path='/' component={Home} />
+          {/* Add create post route. Route authenticated. */}
+          <AuthenticatedRoute user={user} exact path='/create-post' render={() => (
+            <CreatePost msgAlert={this.msgAlert} user={user} />
+          )} />
+          {/* Add index trips route. Route authenticated. */}
+          <AuthenticatedRoute user={user} exact path='/index-trips' render={() => (
+            <IndexTrips msgAlert={this.msgAlert} user={user} />
+          )} />
+
         </main>
       </Fragment>
     )
