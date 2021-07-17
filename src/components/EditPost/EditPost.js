@@ -53,6 +53,7 @@ const EditPost = (props) => {
           variant: 'danger'
         })
       })
+    setTrip({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   }
 
   if (updated) {

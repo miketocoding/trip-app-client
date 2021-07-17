@@ -40,6 +40,7 @@ const CreatePost = (props) => {
           variant: 'danger'
         })
       })
+    setTrip({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   }
 
   if (createdTripId) {
