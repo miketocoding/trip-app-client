@@ -14,7 +14,6 @@ const IndexTrips = (props) => {
         message: messages.indexTripsSuccess,
         variant: 'success'
       }))
-
       .catch(error => {
         props.msgAlert({
           heading: 'Index Trips Failed with error: ' + error.message,
@@ -34,6 +33,7 @@ const IndexTrips = (props) => {
     <Fragment>
       <h1>Your Past Trips!</h1>
       <ul>{tripLinks}</ul>
+      {console.log('Current contents of trips', trips)}
     </Fragment>
   )
 }

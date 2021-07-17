@@ -13,7 +13,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
 
     <label>Start Date</label>
     <input
-      placeholder="Travel Start Date"
+      placeholder="yyyy-mm-dd"
       value={trip.start}
       name="start"
       onChange={handleChange}
@@ -21,7 +21,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
 
     <label>End Date</label>
     <input
-      placeholder="Travel End Date"
+      placeholder="yyyy-mm-dd"
       value={trip.end}
       name="end"
       onChange={handleChange}
