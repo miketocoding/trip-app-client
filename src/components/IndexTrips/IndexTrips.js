@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { indexPosts } from './../../api/travelBlog'
+import messages from '../AutoDismissAlert/messages'
 
 const IndexTrips = (props) => {
   const [trips, setTrips] = useState([])
@@ -8,7 +9,19 @@ const IndexTrips = (props) => {
   useEffect(() => {
     indexPosts(props.user)
       .then(res => setTrips(res.data.trips))
-      .catch(console.error)
+      .then(() => props.msgAlert({
+        heading: 'Index Trips Success',
+        message: messages.indexTripsSuccess,
+        variant: 'success'
+      }))
+
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Index Trips Failed with error: ' + error.message,
+          message: messages.indexTripsFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const tripLinks = trips.map(trip => (

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import TripForm from '../shared/TripForm'
 // import axios call
 import { createPost } from './../../api/travelBlog'
+import messages from '../AutoDismissAlert/messages'
 
 const CreatePost = (props) => {
   // using hooks
@@ -21,13 +22,24 @@ const CreatePost = (props) => {
   }
 
   const handleSubmit = event => {
-    const { user } = props
+    const { user, msgAlert } = props
     console.log('Value of user props', user)
     console.log('Value of user.token', user.token)
     event.preventDefault()
     createPost(user, trip)
       .then(res => setCreatedTripId(res.data.trip._id))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Create Post Success',
+        message: messages.createPostSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Create Post Failed with error: ' + error.message,
+          message: messages.createPostFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (createdTripId) {

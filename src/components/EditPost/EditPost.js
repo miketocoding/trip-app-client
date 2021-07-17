@@ -3,6 +3,7 @@ import { Redirect, withRouter } from 'react-router-dom'
 // import tripform
 import TripForm from '../shared/TripForm'
 import { showPost, editPost } from './../../api/travelBlog'
+import messages from '../AutoDismissAlert/messages'
 
 const EditPost = (props) => {
   console.log('You are at EditPost')
@@ -15,6 +16,11 @@ const EditPost = (props) => {
         setTrip(res.data.trip)
         console.log('this is res data', res)
       })
+      .then(() => props.msgAlert({
+        heading: 'Show Specific Trips Success',
+        message: messages.showTripSuccess,
+        variant: 'success'
+      }))
       .catch(console.error)
   }, [])
 
@@ -32,8 +38,21 @@ const EditPost = (props) => {
     event.preventDefault()
 
     editPost(props.user, props.match.params.id, trip)
-      .then(() => setUpdated(true))
-      .catch(console.error)
+      .then(() => {
+        setUpdated(true)
+        props.msgAlert({
+          heading: 'Edit Post Success',
+          message: messages.editPostSuccess,
+          variant: 'success'
+        })
+      })
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Edit Post Failed with error: ' + error.message,
+          message: messages.editPostFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (updated) {

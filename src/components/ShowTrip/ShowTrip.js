@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link, Redirect, withRouter } from 'react-router-dom'
 import { showPost, deletePost } from './../../api/travelBlog'
+import messages from '../AutoDismissAlert/messages'
 
 const ShowTrip = (props) => {
   console.log('you are in showTrip')
@@ -17,13 +18,35 @@ const ShowTrip = (props) => {
         setTrip(res.data.trip)
         console.log(res)
       })
-      .catch(console.error)
+      .then(() => props.msgAlert({
+        heading: 'Show Specific Trips Success',
+        message: messages.showTripSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Show Specific Trips Failed with error: ' + error.message,
+          message: messages.showTripFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const destroy = () => {
     deletePost(user, props.match.params.id)
       .then(() => setDeleted(true))
-      .catch(console.error)
+      .then(() => props.msgAlert({
+        heading: 'Delete Post Success',
+        message: messages.deletePostSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Delete Post Failed with error: ' + error.message,
+          message: messages.deletePostFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (!trip) {
