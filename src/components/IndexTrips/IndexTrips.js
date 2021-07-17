@@ -30,7 +30,8 @@ const IndexTrips = (props) => {
     } else if (val.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
     val.start.toLowerCase().includes(searchTerm.toLowerCase()) ||
     val.travelers.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    val.standouts.toLowerCase().includes(searchTerm.toLowerCase())) {
+    val.standouts.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    val.rating.toString().includes(searchTerm.toString())) {
       return val
     }
   }).map(trip => (
