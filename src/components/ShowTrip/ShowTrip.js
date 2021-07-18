@@ -62,7 +62,10 @@ const ShowTrip = (props) => {
   return (
     <Fragment>
       <h4>{trip.location}</h4>
-      <p>{trip.standouts}</p>
+      <p>Start Date: {trip.start}</p>
+      <p>End Date: {trip.end}</p>
+      <p>Rating (out of 10): {trip.rating}</p>
+      <p>Standouts: {trip.standouts}</p>
       <button onClick={destroy}>Delete Post</button>
       <Link to="/index-trips/">Back to all trips</Link>
       <Link to={`/index-trips/${props.match.params.id}/edit`}>

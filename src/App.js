@@ -18,6 +18,7 @@ import CreatePost from './components/CreatePost/CreatePost'
 import IndexTrips from './components/IndexTrips/IndexTrips'
 import ShowTrip from './components/ShowTrip/ShowTrip'
 import EditPost from './components/EditPost/EditPost'
+import Stats from './components/Stats/Stats'
 
 class App extends Component {
   constructor (props) {
@@ -92,6 +93,10 @@ class App extends Component {
           {/* Add edit post route. Route authenticated. */}
           <AuthenticatedRoute user={user} exact path='/index-trips/:id/edit' render={() => (
             <EditPost msgAlert={this.msgAlert} user={user} />
+          )} />
+          {/* Add Stats page route. Route authenticated. */}
+          <AuthenticatedRoute user={user} exact path='/stats' render={() => (
+            <Stats msgAlert={this.msgAlert} user={user} />
           )} />
 
         </main>

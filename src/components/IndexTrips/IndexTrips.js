@@ -23,14 +23,17 @@ const IndexTrips = (props) => {
         })
       })
   }, [])
-
+  // Set up a filter so I can search through trips object to see matching posts
   const tripLinks = trips.filter((val) => {
+    // if search is empty then return all values
     if (searchTerm === '') {
       return val
+    // make everything lowercase. If search term matches anything in trip, return it.
     } else if (val.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
     val.start.toLowerCase().includes(searchTerm.toLowerCase()) ||
     val.travelers.toLowerCase().includes(searchTerm.toLowerCase()) ||
     val.standouts.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    // convert number value of rating to string so search can work
     val.rating.toString().includes(searchTerm.toString())) {
       return val
     }
