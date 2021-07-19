@@ -7,7 +7,7 @@ import messages from '../AutoDismissAlert/messages'
 
 const EditPost = (props) => {
   console.log('You are at EditPost')
-  const [trip, setTrip] = useState({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
+  const [trip, setTrip] = useState({ image: '', location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const EditPost = (props) => {
           variant: 'danger'
         })
       })
-    setTrip({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
+    setTrip({ image: '', location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   }
 
   if (updated) {

@@ -8,7 +8,7 @@ import messages from '../AutoDismissAlert/messages'
 
 const CreatePost = (props) => {
   // using hooks
-  const [trip, setTrip] = useState({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
+  const [trip, setTrip] = useState({ image: '', location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   const [createdTripId, setCreatedTripId] = useState(null)
 
   const handleChange = event => {
@@ -40,7 +40,7 @@ const CreatePost = (props) => {
           variant: 'danger'
         })
       })
-    setTrip({ location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
+    setTrip({ image: '', location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   }
 
   if (createdTripId) {
