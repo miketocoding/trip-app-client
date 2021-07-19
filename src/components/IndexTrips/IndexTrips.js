@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { indexPosts } from './../../api/travelBlog'
 import messages from '../AutoDismissAlert/messages'
+import Image from 'react-bootstrap/Image'
 
 const IndexTrips = (props) => {
   const [trips, setTrips] = useState([])
@@ -39,7 +40,7 @@ const IndexTrips = (props) => {
     }
   }).map(trip => (
     <li key={trip.id}>
-      <Link to={`/index-trips/${trip.id}`}><img src={trip.image} />{trip.location}, id: {trip.id}</Link>
+      <Link to={`/index-trips/${trip.id}`}><Image src={trip.image} thumbnail fluid />{trip.location}, id: {trip.id}</Link>
     </li>
   ))
 
