@@ -1,70 +1,88 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
-  <form onSubmit={handleSubmit}>
-    <label>Image URL</label>
-    <input
-      placeholder="Image URL"
-      value={trip.image}
-      name="image"
-      onChange={handleChange}
-    />
+  <Form onSubmit={handleSubmit}>
 
-    <label>Location</label>
-    <input
-      placeholder="Travel Location"
-      value={trip.location}
-      name="location"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formImageUrl">
+      <Form.Label>Image URL</Form.Label>
+      <Form.Control
+        placeholder="Image URL of your trip"
+        value={trip.image}
+        name="image"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <label>Start Date</label>
-    <input
-      placeholder="yyyy-mm-dd"
-      value={trip.start}
-      name="start"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formLocation">
+      <Form.Label>Location</Form.Label>
+      <Form.Control
+        placeholder="City, State, Country"
+        value={trip.location}
+        name="location"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <label>End Date</label>
-    <input
-      placeholder="yyyy-mm-dd"
-      value={trip.end}
-      name="end"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formStart">
+      <Form.Label>Start Date</Form.Label>
+      <Form.Control
+        placeholder="yyyy-mm-dd"
+        value={trip.start}
+        name="start"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <label>Other Travelers</label>
-    <input
-      placeholder="Other Travelers"
-      value={trip.travelers}
-      name="travelers"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formEnd">
+      <Form.Label>End Date</Form.Label>
+      <Form.Control
+        placeholder="yyyy-mm-dd"
+        value={trip.end}
+        name="end"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <label>Trip Rating (1-10)</label>
-    <input
-      placeholder="Trip Rating (1-10)"
-      value={trip.rating}
-      name="rating"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formTravelers">
+      <Form.Label>Other Travelers</Form.Label>
+      <Form.Control
+        placeholder="Names of the other travelers"
+        value={trip.travelers}
+        name="travelers"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <label>Standouts</label>
-    <textarea
-      placeholder="Standouts"
-      value={trip.standouts}
-      name="standouts"
-      onChange={handleChange}
-    />
+    <Form.Group controlId="formRating">
+      <Form.Label>Trip Rating (1-10)</Form.Label>
+      <Form.Control
+        placeholder="Trip Rating (1-10)"
+        value={trip.rating}
+        name="rating"
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-    <button type="submit">Submit</button>
+    <Form.Group controlId="formStandouts">
+      <Form.Label>Standouts</Form.Label>
+      <Form.Control
+        as="textarea"
+        placeholder="The most memorable parts were..."
+        value={trip.standouts}
+        name="standouts"
+        onChange={handleChange}
+      />
+    </Form.Group>
+
+    <Button type="submit">Submit</Button>
     <Link to={cancelPath}>
-      <button>Cancel</button>
+      <Button>Cancel</Button>
     </Link>
 
-  </form>
+  </Form>
 )
 
 export default TripForm
