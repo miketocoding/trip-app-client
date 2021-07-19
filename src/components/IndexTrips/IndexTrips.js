@@ -2,7 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { indexPosts } from './../../api/travelBlog'
 import messages from '../AutoDismissAlert/messages'
-import Image from 'react-bootstrap/Image'
+// import Image from 'react-bootstrap/Image'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 const IndexTrips = (props) => {
   const [trips, setTrips] = useState([])
@@ -39,9 +42,21 @@ const IndexTrips = (props) => {
       return val
     }
   }).map(trip => (
-    <li key={trip.id}>
-      <Link to={`/index-trips/${trip.id}`}><Image src={trip.image} thumbnail fluid />{trip.location}, id: {trip.id}</Link>
-    </li>
+    <Card style={{ width: '22rem', margin: '8px' }} key={trip.id}>
+      <Link to={`/index-trips/${trip.id}`}>
+        <Card.Img variant="top" src={trip.image} />
+        <Card.Body>
+          <Card.Title>{trip.location}</Card.Title>
+          <Card.Text>
+            Trip ID: {trip.id}
+          </Card.Text>
+        </Card.Body>
+      </Link>
+    </Card>
+    // <Button variant="primary">Go somewhere</Button>
+    // <li key={trip.id}>
+    //   <Link to={`/index-trips/${trip.id}`}><Image src={trip.image} thumbnail fluid />{trip.location}, id: {trip.id}</Link>
+    // </li>
   ))
 
   return (
@@ -54,9 +69,14 @@ const IndexTrips = (props) => {
           setSearchTerm(event.target.value)
         }}
       />
-      <ul>{tripLinks}</ul>
+      <Container fluid className="no-padding mt-4">
+        <Row className="justify-content-center mt-5 mb-5">
+          {tripLinks}
+        </Row>
+      </Container>
       {console.log('Current contents of trips', trips)}
     </Fragment>
+    // <ul>{tripLinks}</ul>
   )
 }
 
