@@ -39,7 +39,7 @@ const IndexTrips = (props) => {
     }
   }).map(trip => (
     <li key={trip.id}>
-      <Link to={`/index-trips/${trip.id}`}>{trip.location}, id: {trip.id}</Link>
+      <Link to={`/index-trips/${trip.id}`}><img src={trip.image} />{trip.location}, id: {trip.id}</Link>
     </li>
   ))
 

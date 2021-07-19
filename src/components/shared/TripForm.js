@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom'
 
 const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
   <form onSubmit={handleSubmit}>
+    <label>Image URL</label>
+    <input
+      placeholder="Image URL"
+      value={trip.image}
+      name="image"
+      onChange={handleChange}
+    />
+
     <label>Location</label>
     <input
       placeholder="Travel Location"
