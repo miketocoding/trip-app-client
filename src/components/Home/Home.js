@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import Layout from '../shared/Layout'
 
 const Home = () => {
   return (
-    <Fragment>
+    <Layout>
       <h1>You are on the Home Page</h1>
-    </Fragment>
+    </Layout>
   )
 }
 
