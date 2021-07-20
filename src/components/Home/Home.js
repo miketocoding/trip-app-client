@@ -9,13 +9,40 @@ import image3 from './assets/image3.jpeg'
 import image4 from './assets/image4.jpeg'
 import image5 from './assets/image5.jpeg'
 
+const cardContainer = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+  marginTop: '2em'
+}
+
+const card = {
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+  justifyContent: 'space-evenly',
+  alignItems: 'center',
+  padding: '30px',
+  width: '335px',
+  height: '280px',
+  backgroundColor: 'rgba(243, 235, 228, 0.80)',
+  borderRadius: '1px',
+  boxShadow: '1px 6px 8px 0px #615f5f2e'
+}
+
 const Home = () => {
   return (
     <Layout>
       <BackgroundSlider
-        images={[image1, image2, image3, image4, image5]}
+        images={[image5, image3, image4, image2, image1]}
         duration={7} transition={2} />
-      <h1>You are on the Home Page</h1>
+      <div style={ cardContainer } >
+        <div style={ card } >
+          <h1 className='brand-logo'>Memory Lane</h1>
+          <h4>Your home for a safe and private travel blog</h4>
+          <p>Take a trip down memory lane and reminisce about all your past adventures. See your travel dates, trip ratings, other travelers and more!</p>
+        </div>
+      </div>
     </Layout>
   )
 }

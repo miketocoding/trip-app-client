@@ -46,7 +46,7 @@ const IndexTrips = (props) => {
       <Link to={`/index-trips/${trip.id}`}>
         <Card.Img variant="top" src={trip.image} />
         <Card.Body>
-          <Card.Title>{trip.location}</Card.Title>
+          <Card.Title className="title">{trip.location}</Card.Title>
           <Card.Text>
             Trip ID: {trip.id}
           </Card.Text>
