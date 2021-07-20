@@ -49,7 +49,7 @@ const CreatePost = (props) => {
 
   return (
     <Fragment>
-      <h3>Create your trip below</h3>
+      <h2 className='to-center mt-4'>Create your trip below</h2>
       <TripForm
         trip={trip}
         handleChange={handleChange}

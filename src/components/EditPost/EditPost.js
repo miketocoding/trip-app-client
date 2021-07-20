@@ -62,6 +62,7 @@ const EditPost = (props) => {
 
   return (
     <Fragment>
+      <h2 className='to-center mt-4'>Edit your trip below</h2>
       <TripForm
         trip={trip}
         handleChange={handleChange}

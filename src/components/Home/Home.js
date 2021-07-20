@@ -13,7 +13,7 @@ const cardContainer = {
   display: 'flex',
   justifyContent: 'center',
   alignContent: 'center',
-  marginTop: '2em'
+  marginTop: '4em'
 }
 
 const card = {

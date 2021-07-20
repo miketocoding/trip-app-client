@@ -9,7 +9,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
     <Form onSubmit={handleSubmit}>
 
       <Form.Group controlId="formImageUrl">
-        <Form.Label>Image URL</Form.Label>
+        <Form.Label className="form-labels">Image URL</Form.Label>
         <Form.Control
           placeholder="Image URL of your trip"
           value={trip.image}
@@ -19,7 +19,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formLocation">
-        <Form.Label>Location</Form.Label>
+        <Form.Label className="form-labels">Location</Form.Label>
         <Form.Control
           placeholder="City, State, Country"
           value={trip.location}
@@ -29,7 +29,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formStart">
-        <Form.Label>Start Date</Form.Label>
+        <Form.Label className="form-labels">Start Date</Form.Label>
         <Form.Control
           placeholder="yyyy-mm-dd"
           value={trip.start}
@@ -39,7 +39,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formEnd">
-        <Form.Label>End Date</Form.Label>
+        <Form.Label className="form-labels">End Date</Form.Label>
         <Form.Control
           placeholder="yyyy-mm-dd"
           value={trip.end}
@@ -49,7 +49,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formTravelers">
-        <Form.Label>Other Travelers</Form.Label>
+        <Form.Label className="form-labels">Other Travelers</Form.Label>
         <Form.Control
           placeholder="Names of other travelers"
           value={trip.travelers}
@@ -59,7 +59,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formRating">
-        <Form.Label>Trip Rating (1-10)</Form.Label>
+        <Form.Label className="form-labels">Trip Rating (1-10)</Form.Label>
         <Form.Control
           placeholder="Trip Rating (1-10)"
           value={trip.rating}
@@ -69,7 +69,7 @@ const TripForm = ({ trip, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
 
       <Form.Group controlId="formStandouts">
-        <Form.Label>Standouts</Form.Label>
+        <Form.Label className="form-labels">Standouts</Form.Label>
         <Form.Control
           as="textarea"
           placeholder="The most memorable parts were..."

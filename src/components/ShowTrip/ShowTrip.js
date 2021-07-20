@@ -1,7 +1,10 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Redirect, withRouter } from 'react-router-dom'
 import { showPost, deletePost } from './../../api/travelBlog'
 import messages from '../AutoDismissAlert/messages'
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 
 const ShowTrip = (props) => {
   console.log('you are in showTrip')
@@ -60,18 +63,20 @@ const ShowTrip = (props) => {
   }
 
   return (
-    <Fragment>
-      <h4>{trip.location}</h4>
+    <Container fluid="lg mt-4">
+      <Image src={trip.image} className='to-center' fluid />
+      <h4 className='mt-4'>{trip.location}</h4>
       <p>Start Date: {trip.start}</p>
       <p>End Date: {trip.end}</p>
-      <p>Rating (out of 10): {trip.rating}</p>
+      <p>Rating (out of 10): {trip.rating} Stars!</p>
+      <p>Other Travelers: {trip.travelers}</p>
       <p>Standouts: {trip.standouts}</p>
-      <button onClick={destroy}>Delete Post</button>
+      <Button onClick={destroy}>Delete Post</Button>
       <Link to="/index-trips/">Back to all trips</Link>
       <Link to={`/index-trips/${props.match.params.id}/edit`}>
-        <button>Edit Trip</button>
+        <Button>Edit Trip</Button>
       </Link>
-    </Fragment>
+    </Container>
   )
 }
 

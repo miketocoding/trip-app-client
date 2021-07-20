@@ -6,6 +6,7 @@ import messages from '../AutoDismissAlert/messages'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Form from 'react-bootstrap/Form'
 
 const IndexTrips = (props) => {
   const [trips, setTrips] = useState([])
@@ -61,8 +62,9 @@ const IndexTrips = (props) => {
 
   return (
     <Fragment>
-      <h1>Your Past Trips!</h1>
-      <input
+      <h2 className='to-center mt-4'>Your Past Trips!</h2>
+      <Form.Control
+        className='to-center no-padding col-sm-10 col-md-8 mx-auto'
         type='text'
         placeholder='Search...'
         onChange={(event) => {
