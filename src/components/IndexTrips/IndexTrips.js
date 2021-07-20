@@ -49,7 +49,7 @@ const IndexTrips = (props) => {
         <Card.Body>
           <Card.Title className="title">{trip.location}</Card.Title>
           <Card.Text>
-            Trip ID: {trip.id}
+            Trip dates: {trip.start} - {trip.end}
           </Card.Text>
         </Card.Body>
       </Link>

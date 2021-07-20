@@ -68,7 +68,7 @@ const ShowTrip = (props) => {
     <Container fluid="lg mt-4">
       <Row>
         <Col xs={12} md={4}>
-          <h3 className='mt-4'>{trip.location}</h3>
+          <h2 className='mt-4'>{trip.location}</h2>
           <p>Start Date: {trip.start}</p>
           <p>End Date: {trip.end}</p>
           <p>Rating (out of 10): {trip.rating} Stars!</p>
