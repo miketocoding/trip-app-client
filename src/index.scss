@@ -5,6 +5,41 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: 2em;
+  color: #022f8e;
+}
+
+.header-color {
+  // background-color: rgba(243, 235, 228, 0.80);
+  background-color: rgba(255, 255, 255, 0.80);
+}
+
+.navbar-light .navbar-brand {
+    // color: rgba(0,0,0,0.9);
+    color: #022f8e;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    // color: rgba(0,0,0,0.5);
+    color: #022f8e;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #022f8e;
+    border-color: #022f8e;
+}
+
+a {
+  color: #022f8e;
+}
+
+.spaceBetween {
+  margin: 0px 2px;
+}
+
+.bottom-container {
+  display: block;
 }
 
 .form-labels {

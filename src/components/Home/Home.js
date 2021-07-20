@@ -25,7 +25,8 @@ const card = {
   padding: '30px',
   width: '335px',
   height: '280px',
-  backgroundColor: 'rgba(243, 235, 228, 0.80)',
+  // backgroundColor: 'rgba(243, 235, 228, 0.80)',
+  backgroundColor: 'rgba(255, 255, 255, 0.80)',
   borderRadius: '1px',
   boxShadow: '1px 6px 8px 0px #615f5f2e'
 }

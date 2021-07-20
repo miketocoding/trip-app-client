@@ -4,6 +4,8 @@ import { showPost, deletePost } from './../../api/travelBlog'
 import messages from '../AutoDismissAlert/messages'
 import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
 const ShowTrip = (props) => {
@@ -64,18 +66,24 @@ const ShowTrip = (props) => {
 
   return (
     <Container fluid="lg mt-4">
-      <Image src={trip.image} className='to-center' fluid />
-      <h4 className='mt-4'>{trip.location}</h4>
-      <p>Start Date: {trip.start}</p>
-      <p>End Date: {trip.end}</p>
-      <p>Rating (out of 10): {trip.rating} Stars!</p>
-      <p>Other Travelers: {trip.travelers}</p>
-      <p>Standouts: {trip.standouts}</p>
-      <Button onClick={destroy}>Delete Post</Button>
-      <Link to="/index-trips/">Back to all trips</Link>
-      <Link to={`/index-trips/${props.match.params.id}/edit`}>
-        <Button>Edit Trip</Button>
-      </Link>
+      <Row>
+        <Col xs={12} md={4}>
+          <h3 className='mt-4'>{trip.location}</h3>
+          <p>Start Date: {trip.start}</p>
+          <p>End Date: {trip.end}</p>
+          <p>Rating (out of 10): {trip.rating} Stars!</p>
+          <p>Other Travelers: {trip.travelers}</p>
+          <p>Standouts: {trip.standouts}</p>
+          <Link to={`/index-trips/${props.match.params.id}/edit`}>
+            <Button className="spaceBetween">Edit Trip</Button>
+          </Link>
+          <Button className="spaceBetween" onClick={destroy}>Delete Post</Button>
+          <Link className="bottom-container" to="/index-trips/">⏎ Back To All Trips</Link>
+        </Col>
+        <Col>
+          <Image src={trip.image} className='to-center' fluid />
+        </Col>
+      </Row>
     </Container>
   )
 }
