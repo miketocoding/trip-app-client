@@ -23,10 +23,7 @@ My problem-solving strategy revolved around reading the docs, google the issues 
 
 ## Images
 ### Wireframe
-![Trip App Wireframe](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-wireframe.png)
-
-### Entity Relationship Diagram
-![Trip App ERD](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-erd.png)
+![Trip App Wireframe](https://github.com/miketocoding/trip-app-client/blob/main/travel-app-wireframe.png?raw=true)
 
 ## User Stories
 - As a user, I want to be able to create a trip post
@@ -36,7 +33,10 @@ My problem-solving strategy revolved around reading the docs, google the issues 
 - As a user, I want to see trip posts i’ve been tagged in
 
 ## Screenshot of App
-![Screenshot of App]()
+![Screenshot of App](https://github.com/miketocoding/trip-app-client/blob/main/memory-lane-screenshot.png?raw=true)
+
+## Setup and Installation Instructions for Front-End Application
+First step was to download the React Template provided by GA. I then modified deployment links to match my heroku deployed application as well as change the localhost to match the backend port number. After this I uploaded my project to github using the instructions provided on the github website. Action was completed through the terminal. Once everything was set up I deployed my front-end client through github pages via the npm run deploy command in the terminal. 
 
 ## Creator
 Michael Van Le
