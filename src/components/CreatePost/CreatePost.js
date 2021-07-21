@@ -23,8 +23,6 @@ const CreatePost = (props) => {
 
   const handleSubmit = event => {
     const { user, msgAlert } = props
-    console.log('Value of user props', user)
-    console.log('Value of user.token', user.token)
     event.preventDefault()
     createPost(user, trip)
       .then(res => setCreatedTripId(res.data.trip._id))

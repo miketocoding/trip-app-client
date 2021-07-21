@@ -6,16 +6,12 @@ import { showPost, editPost } from './../../api/travelBlog'
 import messages from '../AutoDismissAlert/messages'
 
 const EditPost = (props) => {
-  console.log('You are at EditPost')
   const [trip, setTrip] = useState({ image: '', location: '', start: '', end: '', travelers: '', rating: '', standouts: '' })
   const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
     showPost(props.user, props.match.params.id)
-      .then(res => {
-        setTrip(res.data.trip)
-        console.log('this is res data', res)
-      })
+      .then(res => setTrip(res.data.trip))
       .then(() => props.msgAlert({
         heading: 'Show Specific Trips Success',
         message: messages.showTripSuccess,

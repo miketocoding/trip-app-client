@@ -9,20 +9,13 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
 const ShowTrip = (props) => {
-  console.log('you are in showTrip')
   // Hooks
   const [trip, setTrip] = useState([])
   const [deleted, setDeleted] = useState(false)
   const { user } = props
-  // const tripId = props.match.params.id
-  console.log('Value of User', user)
-  console.log('Value of tripId', props.match.params.id)
   useEffect(() => {
     showPost(user, props.match.params.id)
-      .then(res => {
-        setTrip(res.data.trip)
-        console.log(res)
-      })
+      .then(res => setTrip(res.data.trip))
       .then(() => props.msgAlert({
         heading: 'Show Specific Trips Success',
         message: messages.showTripSuccess,

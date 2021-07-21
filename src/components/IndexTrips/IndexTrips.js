@@ -54,10 +54,6 @@ const IndexTrips = (props) => {
         </Card.Body>
       </Link>
     </Card>
-    // <Button variant="primary">Go somewhere</Button>
-    // <li key={trip.id}>
-    //   <Link to={`/index-trips/${trip.id}`}><Image src={trip.image} thumbnail fluid />{trip.location}, id: {trip.id}</Link>
-    // </li>
   ))
 
   return (
@@ -76,9 +72,7 @@ const IndexTrips = (props) => {
           {tripLinks}
         </Row>
       </Container>
-      {console.log('Current contents of trips', trips)}
     </Fragment>
-    // <ul>{tripLinks}</ul>
   )
 }
 

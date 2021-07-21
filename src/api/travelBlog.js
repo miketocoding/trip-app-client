@@ -23,9 +23,6 @@ export const indexPosts = (user) => {
 
 // Show single trip
 export const showPost = (user, postId) => {
-  console.log('you\'re in show trip')
-  console.log('value of user', user)
-  console.log('value of postId', postId)
   return axios({
     url: apiUrl + '/trips/' + postId,
     method: 'GET',
@@ -53,12 +50,3 @@ export const editPost = (user, postId, data) => {
     }
   })
 }
-
-// make sure to send them in the right order (user, data)
-// owner: user._id,
-// location: 'location',
-// start: 'start',
-// end: 'end',
-// travelers: 'travelers',
-// rating: 'rating',
-// standouts: 'standouts'
